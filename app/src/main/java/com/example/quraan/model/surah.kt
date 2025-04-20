@@ -1,13 +1,23 @@
 package com.example.quraan.model
 
-data class Ayah(
+data class Surah(
     val code: Int,
-    val data : Data,
-    val status: String,
-){
+    val data: Data,
+    val status: String
+) {
 
     data class Data(
+        val ayahs: List<Ayah>,
         val edition: Edition,
+        val englishName: String,
+        val englishNameTranslation: String,
+        val name: String,
+        val number: Int,
+        val numberOfAyahs: Int,
+        val revelationType: String
+    )
+
+    data class Ayah(
         val hizbQuarter: Int,
         val juz: Int,
         val manzil: Int,
@@ -16,7 +26,6 @@ data class Ayah(
         val page: Int,
         val ruku: Int,
         val sajda: Boolean,
-        val surah: Surah,
         val text: String
     )
 
@@ -28,14 +37,5 @@ data class Ayah(
         val language: String,
         val name: String,
         val type: String
-    )
-
-    data class Surah(
-        val englishName: String,
-        val englishNameTranslation: String,
-        val name: String,
-        val number: Int,
-        val numberOfAyahs: Int,
-        val revelationType: String
     )
 }
